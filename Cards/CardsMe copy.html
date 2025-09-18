@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      background:#f3f6fb;
+    }
+    .card{
+      width: 350px;
+      background:#fff;
+      border:1px solid #ccc;
+      border-radius:8px;
+      padding:16px;
+    }
+    .card-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .expand-btn{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      border:none;
+      background:#2b82ff;
+      color:#fff;
+      cursor:pointer;
+    }
+    .card-content{ margin-top:12px; }
+    .summary{ margin:0 0 8px 0; }
+    .details.hidden{ display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h3>Community Garden Project</h3>
+      <button class="expand-btn" aria-label="Expand card" aria-expanded="false">+</button>
+    </div>
+
+    <div class="card-content">
+      <p class="summary">Join neighbors in creating a shared growing space...</p>
+      <div class="details hidden">
+        <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
+        <p>Contact: garden@community.org</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const expandBtn = document.querySelector('.expand-btn');
+    const details = document.querySelector('.details');
+
+    expandBtn.addEventListener('click', function() {
+      // toggle the "hidden" class
+      details.classList.toggle('hidden');
+
+      // change button text
+      if (details.classList.contains('hidden')) {
+        expandBtn.textContent = '+';
+        expandBtn.setAttribute('aria-label', 'Expand card');
+        expandBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        expandBtn.textContent = '-';
+        expandBtn.setAttribute('aria-label', 'Collapse card');
+        expandBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  </script>
+</body>
+</html>
