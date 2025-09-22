@@ -1,0 +1,50 @@
+/* General Background */
+body{
+    background-color: #3A3238;
+}
+
+/* nav bar */
+nav{
+    background-color: #E8B4BC;
+     margin: 0; /* removes the gaps */
+    padding: 3px;
+}
+
+/* Ryan Dunn */
+h1{
+    color: #F5E3E0;
+}
+
+/* About/Others */
+h2{
+    background-color: #E8B4BC;
+    color: #6E4555;
+    margin: 0; 
+    padding: 10px;
+}
+
+/* Ryan Dunn */
+p{
+    background-color: #E8B4BC;
+    color: #6E4555;
+    margin: 0;
+    padding: 8px;
+}
+
+/* Blender Image */
+img {
+  margin-top: 20px; 
+  border: 4px solid #E8B4BC; 
+  border-radius: 8px; 
+}
+
+h3{
+    background-color: #E8B4BC;
+    color: #6E4555;
+    margin-top: 18px; 
+    padding: 2.5px;
+}
+
+@media (max-width: 760){
+
+}
