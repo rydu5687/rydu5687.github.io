@@ -18,3 +18,30 @@ function filterPhotos(category) {
     }
   });
 }
+
+// ===== SEARCH SYSTEM =====
+const searchInput = document.querySelector('#searchInput');
+const searchButton = document.querySelector('#searchButton');
+
+// When search button is clicked
+searchButton.addEventListener('click', runSearch);
+
+// Also allow Enter key
+searchInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    runSearch();
+  }
+});
+
+function runSearch() {
+  const query = searchInput.value.toLowerCase().trim();
+
+  photoCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(query) || query === "") {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}

@@ -11,11 +11,6 @@
   <div class="nav-brand">CU Powerlifting</div> 
 
   <nav class="main-nav">
-    <button class="nav-toggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <ul class="nav-menu">
       <li><a href="BarbellGridHome.html">Home</a></li>
       <li><a href="resources.html">Resources</a></li>
@@ -34,6 +29,11 @@
       <button>Members</button>
     </nav>
 
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search resources or events...">
+      <button id="searchButton">Search</button>
+    </div>
+
     <main class="gallery-grid">
       <div class="photo-card" data-category="training">Training Day 1</div>
       <div class="photo-card" data-category="events">Meet Highlights</div>
@@ -43,7 +43,7 @@
       <div class="photo-card" data-category="members">New Members</div>
     </main>
 
-    <aside class="gallery-sidebar">Use the buttons above to filter by category.</aside>
+    <aside class="gallery-sidebar">Use the buttons above to filter by category or search below.</aside>
   </div>
 
   <script src="script.js"></script>

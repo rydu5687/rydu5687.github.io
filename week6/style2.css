@@ -133,3 +133,32 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.search-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #CFB97C;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+  color: #CFB97C;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  margin-left: 8px;
+  background-color: #CFB97C;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: white;
+}
