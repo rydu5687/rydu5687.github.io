@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ===== NAVIGATION ===== */
+/* Nav */
 .main-nav {
   padding: 20px;
   display: flex;
@@ -52,11 +52,8 @@ body {
   border: solid 1px #CFB97C;
 }
 
-.nav-toggle {
-  display: none; /* Removed mobile menu entirely */
-}
 
-/* ===== GALLERY GRID ===== */
+/* Gallery */
 .gallery-container {
   display: grid;
   grid-template-areas:

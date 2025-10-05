@@ -1,4 +1,4 @@
-// ===== GALLERY FILTER =====
+// Gallery
 const filterButtons = document.querySelectorAll('.gallery-nav button');
 const photoCards = document.querySelectorAll('.photo-card');
 
@@ -19,7 +19,7 @@ function filterPhotos(category) {
   });
 }
 
-// ===== SEARCH SYSTEM =====
+// Search bar
 const searchInput = document.querySelector('#searchInput');
 const searchButton = document.querySelector('#searchButton');
 
