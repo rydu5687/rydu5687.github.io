@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CU Powerlifting Community</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+  <div class="nav-brand">CU Powerlifting</div> 
+
+  <nav class="main-nav">
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="BarbellGridHome.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="gallery-container">
+    <header class="gallery-header">Community Gallery</header>
+
+    <nav class="gallery-nav">
+      <button>All</button>
+      <button>Training</button>
+      <button>Events</button>
+      <button>Members</button>
+    </nav>
+
+    <main class="gallery-grid">
+      <div class="photo-card" data-category="training">Training Day 1</div>
+      <div class="photo-card" data-category="events">Meet Highlights</div>
+      <div class="photo-card" data-category="members">Team Group Photo</div>
+      <div class="photo-card featured" data-category="training">Featured Lift</div>
+      <div class="photo-card" data-category="events">Charity Event</div>
+      <div class="photo-card" data-category="members">New Members</div>
+    </main>
+
+    <aside class="gallery-sidebar">Use the buttons above to filter by category.</aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
