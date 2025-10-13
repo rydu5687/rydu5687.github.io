@@ -1,0 +1,248 @@
+body {
+  background-color: black;
+  color: #CFB97C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Nav */
+.main-nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Centers the nav content */
+  width: 100%;
+  max-width: 1000px;
+}
+
+.nav-brand {
+  align-self: center;
+  font-size: 32px;
+  margin: 10px 0 20px 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center; /* Centers all buttons horizontally */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: #CFB97C;
+  background-color: black;
+  border: solid 1px white;
+  border-radius: 5px;
+  transition: background-color .5s, color .5s, border .5s;
+}
+
+.nav-menu a:hover {
+  background-color: #CFB97C;
+  color: black;
+  border: solid 1px #CFB97C;
+}
+
+
+/* Gallery */
+.gallery-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main sidebar";
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.gallery-header {
+  grid-area: header;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.gallery-nav {
+  grid-area: nav;
+  text-align: center;
+}
+
+.gallery-nav button {
+  background-color: #CFB97C;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.gallery-nav button:hover {
+  background-color: white;
+}
+
+.gallery-grid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.photo-card {
+  background-color: #1c1c1c;
+  border: 1px solid #CFB97C;
+  padding: 40px 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+  background-color: #CFB97C;
+  color: black;
+}
+
+.featured {
+  grid-column: span 2;
+  background-color: #CFB97C;
+  color: black;
+}
+
+.gallery-sidebar {
+  grid-area: sidebar;
+  border-left: 2px solid #CFB97C;
+  padding-left: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.search-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #CFB97C;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+  color: #CFB97C;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  margin-left: 8px;
+  background-color: #CFB97C;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: white;
+}
+
+
+/* Tablet  */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .gallery-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar";
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-sidebar {
+    border-left: none;
+    border-top: 2px solid #CFB97C;
+    padding-top: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .gallery-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main";
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-sidebar {
+    display: none;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .photo-card {
+    font-size: 0.9rem;
+    padding: 20px 5px;
+  }
+
+  .featured {
+    grid-column: span 1;
+  }
+}
+
+/* Query container */
+@container (max-width: 500px) {
+  .photo-card {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+.data-controls {
+  margin: 40px 0;
+  text-align: center;
+  border-top: 1px solid #CFB97C;
+  padding-top: 20px;
+}
+
+.data-controls button {
+  background-color: #CFB97C;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.data-controls input {
+  margin-left: 10px;
+}
+
+.data-status {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #CFB97C;
+  text-align: left;       
+  padding-left: 0;        
+}
+
+
