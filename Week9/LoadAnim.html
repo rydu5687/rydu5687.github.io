@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Loading Animation</title>
+    <link rel="stylesheet" href="AnimStyle.css">
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader-bar">
+            <div class="progress"></div>
+        </div>
+        <p class="instruction-text">Click the screen to load</p>
+        <p class="loading-text hidden">Loading...</p>
+    </div>
+
+    <script>
+        const progress = document.querySelector('.progress');
+        const instructionText = document.querySelector('.instruction-text');
+        const loadingText = document.querySelector('.loading-text');
+
+        document.body.addEventListener('click', () => {
+            // Hide text/next text
+            instructionText.classList.add('hidden');
+            loadingText.classList.remove('hidden');
+
+            // Load anim
+            progress.classList.add('animate-once');
+        });
+    </script>
+</body>
+</html>
