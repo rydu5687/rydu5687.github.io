@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background-color: #c9bd95;
+  font-family: "Roboto Slab", "Segoe UI", Roboto, sans-serif;
+  background-color: #f5e9e2;
 }
 
 .app {
@@ -19,77 +19,85 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 header {
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #ebebeb;
-  padding: 10px;
+  border-bottom: 2px solid #e6e6e6;
+  padding: 15px;
+  font-size: 28px;
+  color: #a01818;
+  font-weight: bold;
+  background-color: #fff8f6;
 }
 
 .tab-switch {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
-  margin: 0 10px;
-  padding: 8px 10px;
+  margin: 0 12px;
+  padding: 6px 10px;
+  color: #555;
+  transition: all 0.3s ease;
 }
 
 .tab-switch.active {
-  border-bottom: 3px solid #4A2B0F;
+  border-bottom: 3px solid #a01818;
+  color: #a01818;
   font-weight: bold;
 }
 
 .quotes {
-  padding: 20px 50px;
+  padding: 25px 45px;
   min-height: 200px;
 }
 
 .quote-text {
-  padding-bottom: 20px;
-  font-size: 25px;
-  color: black;
+  padding-bottom: 18px;
+  font-size: 23px;
+  color: #222;
+  text-align: center;
 }
 
 .controls {
   width: 100%;
-  padding: 20px 50px;
+  padding: 20px 45px;
 }
 
 .button {
   display: block;
   color: white;
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   text-align: center;
   width: 100%;
-  font-size: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-
-.twitter {
-  background-color: #1da1f2;
-  text-decoration: none;
-}
-
-.twitter:hover {
-  background-color: #1e7fbb;
+  font-size: 19px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
 }
 
 .new-quote {
-  background-color: #4A2B0F;
-  margin-bottom: 15px;
+  background-color: #228b22; 
+  margin-bottom: 12px;
 }
 
 .new-quote:hover {
-  background-color: #6d3b0e;
+  background-color: #2fa62f;
+}
+
+.twitter {
+  background-color: #c62828; 
+}
+
+.twitter:hover {
+  background-color: #d93b3b;
 }
 
 .new-quote:disabled {
@@ -108,7 +116,7 @@ header {
 
 @media screen and (max-width: 600px) {
   .app {
-    width: 100%;
+    width: 95%;
   }
   .quote-text {
     font-size: 18px;
