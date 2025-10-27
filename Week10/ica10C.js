@@ -1,4 +1,4 @@
-// ---------------- CHRISTMAS TRIVIA LOGIC ----------------
+// Christmas Trivia API
 const triviaBtn = document.querySelector("#js-new-quote");
 const answerBtn = document.querySelector("#js-tweet");
 
@@ -35,12 +35,12 @@ function newAnswer() {
   answerText.textContent = current.answer;
 }
 
-triviaBtn.addEventListener('click', newTrivia);
-answerBtn.addEventListener('click', newAnswer);
+triviaBtn.addEventListener("click", newTrivia);
+answerBtn.addEventListener("click", newAnswer);
 newTrivia();
 
 
-// ---------------- RANDOM QUOTES LOGIC (ZENQUOTES API) ----------------
+// Zenquotes API
 const quoteBtn = document.querySelector("#js-new-random-quote");
 const quoteText = document.querySelector("#js-random-quote");
 const quoteAuthor = document.querySelector("#js-random-author");
@@ -53,7 +53,6 @@ async function newQuote() {
     if (!response.ok) throw new Error(response.statusText);
     const data = await response.json();
 
-    // ZenQuotes returns an array with one object: [{ q: "...", a: "..." }]
     const quote = data[0];
     quoteText.textContent = `"${quote.q}"`;
     quoteAuthor.textContent = `— ${quote.a}`;
@@ -64,11 +63,11 @@ async function newQuote() {
   }
 }
 
-quoteBtn.addEventListener('click', newQuote);
+quoteBtn.addEventListener("click", newQuote);
 newQuote();
 
 
-// ---------------- TAB SWITCHING ----------------
+// Tabs
 const tabTrivia = document.getElementById("tab-trivia");
 const tabQuotes = document.getElementById("tab-quotes");
 const triviaSection = document.getElementById("trivia-section");
@@ -89,7 +88,7 @@ tabQuotes.addEventListener("click", () => {
 });
 
 
-// ---------------- LIKE / DISLIKE BUTTONS ----------------
+// Buttons
 document.getElementById("like-btn").addEventListener("click", () => {
   alert("You liked this quote! (no data recorded)");
 });

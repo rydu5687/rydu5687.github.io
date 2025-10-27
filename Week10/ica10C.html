@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas Trivia & Quotes</title>
-  <link rel="stylesheet" href="ica10C.css" />
+  <link rel="stylesheet" href="ica10C.css">
 </head>
 <body>
   <div class="app">
     <header>
-      <button id="tab-trivia" class="tab-button active">🎄 Christmas Trivia</button>
-      <button id="tab-quotes" class="tab-button">💬 Random Quotes</button>
+      <button id="tab-trivia" class="tab-switch active">Christmas Trivia</button>
+      <button id="tab-quotes" class="tab-switch">Random Quotes</button>
     </header>
 
-    <!-- Christmas Trivia Section -->
+    <!-- Christmas Trivia -->
     <section id="trivia-section" class="tab-content active">
       <div class="quotes">
         <div class="quote-text" id="js-quote-text"></div>
@@ -29,7 +30,7 @@
       </div>
     </section>
 
-    <!-- Random Quote Section -->
+    <!-- Quotes -->
     <section id="quotes-section" class="tab-content">
       <div class="quotes">
         <div class="quote-text" id="js-random-quote"></div>
@@ -39,12 +40,10 @@
         <button type="button" id="js-new-random-quote" class="new-quote button">
           Generate a new quote!
         </button>
-      </div>
-      <div class="extension">
-        <h3>Extending the Quote Machine!</h3>
-        <div class="like-buttons">
-          <button id="like-btn" class="button like">👍 Like</button>
-          <button id="dislike-btn" class="button dislike">👎 Dislike</button>
+        <p style="text-align:center; margin-top:20px;">Extending the Quote Machine!</p>
+        <div style="display:flex; justify-content:center; gap:10px; margin-top:10px;">
+          <button id="like-btn" class="twitter button" style="width:auto; background-color:#4A2B0F;">👍 Like</button>
+          <button id="dislike-btn" class="twitter button" style="width:auto; background-color:#4A2B0F;">👎 Dislike</button>
         </div>
       </div>
     </section>
