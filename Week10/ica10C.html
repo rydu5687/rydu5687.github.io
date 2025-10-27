@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christmas Trivia & Quotes</title>
+  <link rel="stylesheet" href="ica10C.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <button id="tab-trivia" class="tab-button active">🎄 Christmas Trivia</button>
+      <button id="tab-quotes" class="tab-button">💬 Random Quotes</button>
+    </header>
+
+    <!-- Christmas Trivia Section -->
+    <section id="trivia-section" class="tab-content active">
+      <div class="quotes">
+        <div class="quote-text" id="js-quote-text"></div>
+        <div class="quote-text" id="js-answer-text"></div>
+      </div>
+      <div class="controls">
+        <button type="button" id="js-new-quote" class="new-quote button">
+          Generate a new bit of trivia!
+        </button>
+        <button type="button" id="js-tweet" class="twitter button">
+          Show me the answer!
+        </button>
+      </div>
+    </section>
+
+    <!-- Random Quote Section -->
+    <section id="quotes-section" class="tab-content">
+      <div class="quotes">
+        <div class="quote-text" id="js-random-quote"></div>
+        <div class="quote-text" id="js-random-author"></div>
+      </div>
+      <div class="controls">
+        <button type="button" id="js-new-random-quote" class="new-quote button">
+          Generate a new quote!
+        </button>
+      </div>
+      <div class="extension">
+        <h3>Extending the Quote Machine!</h3>
+        <div class="like-buttons">
+          <button id="like-btn" class="button like">👍 Like</button>
+          <button id="dislike-btn" class="button dislike">👎 Dislike</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="ica10C.js"></script>
+</body>
+</html>
