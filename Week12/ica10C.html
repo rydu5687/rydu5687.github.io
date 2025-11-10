@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Weather Finder</title>
+  <link rel="stylesheet" href="ica10C.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <button id="tab-weather" class="tab-switch active">Weather</button>
+      <button id="tab-privacy" class="tab-switch">Privacy</button>
+    </header>
+
+    <!-- Weather -->
+    <div id="weather-section" class="tab-content active">
+      <div class="quotes" id="weather-display">
+        <div class="quote-text" id="weather-city"></div>
+        <div class="quote-text" id="weather-temp"></div>
+        <div class="quote-text" id="weather-desc"></div>
+        <div class="quote-text">
+          <img id="weather-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Weather icon">
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" id="btn-exact" class="new-quote button">
+          Use My Exact Location
+        </button>
+
+        <div style="margin-top: 15px; text-align:center;">
+          <!-- ✅ Added accessible label (visually hidden but screen reader–readable) -->
+          <label for="manual-city" class="visually-hidden">Enter city name</label>
+          <input 
+            type="text" 
+            id="manual-city" 
+            placeholder="Enter city name..." 
+            style="padding:8px; width:70%; border:1px solid #ccc; border-radius:5px;"
+          >
+          <button id="btn-manual" class="new-quote button" style="margin-top:10px;">
+            Search City
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy -->
+    <div id="privacy-section" class="tab-content">
+      <div class="quotes">
+        <div class="quote-text" style="font-size:18px; text-align:left;">
+          <h3>Privacy Information</h3>
+          <p>
+            This app may request your device’s location to show accurate local weather data via WeatherAPI's API. 
+            You can also manually enter a city instead.
+          </p>
+          <p>
+            No data is stored permanently; all location info is used in your browser session only.
+          </p>
+          <hr style="margin:15px 0;">
+          <p><strong>Clearing your data will:</strong></p>
+          <ul style="margin-left:20px;">
+            <li>Clear recent city searches</li>
+            <li>Reset weather display</li>
+          </ul>
+        </div>
+
+        <div class="controls" style="margin-top:15px;">
+          <button type="button" id="btn-clear" class="twitter button">
+            Clear My Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="ica10C.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ Higher contrast and color-blind–friendly palette */
+body {
+  font-family: "Roboto Slab", "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f4f4; /* light neutral background for readability */
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #e6e6e6;
+  padding: 15px;
+  font-size: 28px;
+  color: #004d80; /* dark blue for contrast */
+  font-weight: bold;
+  background-color: #e6f0fa; /* very light blue background */
+}
+
+.tab-switch {
+  background: none;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 0 12px;
+  padding: 6px 10px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.tab-switch.active {
+  border-bottom: 3px solid #0077b6; /* medium blue */
+  color: #004d80;
+  font-weight: bold;
+}
+
+.quotes {
+  padding: 25px 45px;
+  min-height: 200px;
+}
+
+.quote-text {
+  padding-bottom: 18px;
+  font-size: 23px;
+  color: #222;
+  text-align: center;
+}
+
+.controls {
+  width: 100%;
+  padding: 20px 45px;
+}
+
+.button {
+  display: block;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 19px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+
+/* ✅ Green replaced with teal (friendly to red–green color blindness) */
+.new-quote {
+  background-color: #00796b; 
+  margin-bottom: 12px;
+}
+
+.new-quote:hover {
+  background-color: #009688;
+}
+
+/* ✅ Red replaced with deep blue for better contrast */
+.twitter {
+  background-color: #005f99; 
+}
+
+.twitter:hover {
+  background-color: #0077b6;
+}
+
+.new-quote:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ✅ Visually hidden label for screen readers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; 
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    width: 95%;
+  }
+  .quote-text {
+    font-size: 18px;
+  }
+}
