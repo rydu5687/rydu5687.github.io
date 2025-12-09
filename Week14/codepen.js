@@ -1,2 +1,2 @@
 console.log("Hello!");
-alert("HIII");
+alert("CodePen Test alert");

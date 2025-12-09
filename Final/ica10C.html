@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Weather Finder</title>
+  <link rel="stylesheet" href="ica10C.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- Background Sky -->
+  <div id="sky-bg"></div>
+
+  <!-- Weather Effects Layer -->
+  <div id="weather-effects"></div>
+
+  <div class="app">
+    <header>
+      <button id="tab-weather" class="tab-switch active">Weather</button>
+      <button id="tab-history" class="tab-switch">History</button>
+      <button id="tab-privacy" class="tab-switch">Privacy</button>
+      <button id="tab-maps" class="tab-switch">Maps</button>
+    </header>
+
+    <!-- Weather -->
+    <div id="weather-section" class="tab-content active">
+      <div class="quotes" id="weather-display">
+        <div class="quote-text" id="weather-city"></div>
+        <div class="quote-text" id="weather-temp"></div>
+        <div class="quote-text" id="weather-desc"></div>
+        <div class="quote-text">
+          <img id="weather-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Weather icon">
+        </div>
+      </div>
+
+      <hr id="forecast-divider">
+
+      <!-- 3-Day Forecast -->
+      <div id="forecast-container" style="margin-top: 20px; text-align:center;">
+        <h3 style="margin-bottom:10px; color:#004d80;">3-Day Forecast</h3>
+
+        <div id="forecast-cards" style="display:flex; justify-content:space-around;">
+        </div>
+      </div>
+
+      <!-- Extras -->
+      <div id="extras-container" style="text-align:center; margin-top:20px;">
+        <button id="extras-btn" class="extras-toggle">Extras ▼</button>
+
+        <div id="extras-dropdown" class="extras-dropdown">
+          <div id="extras-aqi" class="extras-section">
+            <h4>Air Quality Index (AQI)</h4>
+            <p id="aqi-value">Loading...</p>
+            <p id="aqi-desc"></p>
+          </div>
+
+          <hr>
+
+          <div id="extras-alerts" class="extras-section">
+            <h4>Weather Alerts</h4>
+            <div id="alerts-content">Loading...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" id="btn-exact" class="new-quote button">
+          Use My Exact Location
+        </button>
+
+        <div style="margin-top: 15px; text-align:center;">
+          <input 
+            type="text" 
+            id="manual-city" 
+            placeholder="Enter city name..." 
+            style="padding:8px; width:70%; border:1px solid #ccc; border-radius:5px;"
+          >
+          <button id="btn-manual" class="new-quote button" style="margin-top:10px;">
+            Search City
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy -->
+    <div id="privacy-section" class="tab-content">
+      <div class="quotes">
+        <h3>Privacy Information</h3>
+        <p>This app may request your device’s location to show accurate weather.</p>
+        <p>No data is permanently stored.</p>
+
+        <div class="controls" style="margin-top:15px;">
+          <button type="button" id="btn-clear" class="twitter button">
+            Clear My Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div id="history-section" class="tab-content">
+    <div class="quotes">
+      <h3 style="text-align:center; color:#004d80; margin-bottom:15px;">Last 7 Days Weather</h3>
+      <div id="history-cards" style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;"></div>
+    </div>
+  </div>
+
+ <!-- MAPS TAB CONTENT -->
+<div id="maps-section" class="tab-content">
+  <div style="text-align:center; margin: 15px 0; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+    <button id="btn-layer-radar" class="map-btn">Radar</button>
+    <button id="btn-layer-cloud" class="map-btn">Clouds</button>
+    <button id="btn-layer-temp" class="map-btn">Temp</button>
+    <button id="btn-layer-wind" class="map-btn">Wind</button>
+  </div>
+
+  <div id="zoom-warning">You may need to zoom out to view Map Features</div>
+
+  <div id="map-canvas"></div>
+</div>
+
+
+  <script src="ica10C.js"></script>
+</body>
+</html>
