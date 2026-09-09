@@ -21,10 +21,7 @@ const natureLayer =
 const heroImage =
     document.querySelector(".hero-image-container");
 
-const reduceMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+const reduceMotion = false;
 
 
 /* =========================================
