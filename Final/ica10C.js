@@ -34,7 +34,7 @@ tabMaps.addEventListener("click", () => {
     map?.invalidateSize();
   }, 150);
 });
-
+/* test */
 /* WEATHERAPI TILE URL BUILDER */
 function getWeatherapiTileURL(layer) {
   const now = new Date();
