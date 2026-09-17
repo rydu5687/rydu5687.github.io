@@ -1277,3 +1277,72 @@ footer a:hover {
     }
 
 }
+
+/* =========================================
+   MOBILE HEADER FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+
+        padding: 16px 20px;
+        height: auto;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navigation {
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        gap: 18px;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navigation a {
+        flex: 0 0 auto;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 520px) {
+
+    .site-header {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .navigation {
+        gap: 16px;
+    }
+
+    .navigation a {
+        font-size: 9px;
+    }
+
+}
