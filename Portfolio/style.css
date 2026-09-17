@@ -1032,64 +1032,209 @@ footer a:hover {
     column-gap: 40px;
 }
 
+
 /* =========================================
    MOBILE LAYOUT
+   Desktop rules above remain unchanged.
 ========================================= */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
-    /* ---------- GENERAL ---------- */
-
+    html,
     body {
+        width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
-    section {
-        padding-left: 20px;
-        padding-right: 20px;
+    img,
+    video {
+        max-width: 100%;
     }
 
-
-    /* ---------- HEADER ---------- */
-
-    .site-header {
-        padding-left: 20px;
-        padding-right: 20px;
+    /* HEADER: logo stays left; nav scrolls inside its own space. */
+    .site-header,
+    .site-header.scrolled {
+        width: 100%;
+        max-width: 100vw;
+        padding: 12px 16px;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: 14px;
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 21px;
+        white-space: nowrap;
     }
 
     .navigation {
-        gap: 16px;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .navigation::-webkit-scrollbar,
+    .carousel-index::-webkit-scrollbar {
+        display: none;
     }
 
     .navigation a {
-        font-size: 10px;
-        letter-spacing: 1px;
+        flex: 0 0 auto;
+        font-size: 9px;
+        letter-spacing: 0.75px;
+        white-space: nowrap;
     }
 
+    /* SECTIONS */
+    .work-section,
+    .archive-section,
+    .about-section,
+    .contact-section {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-    /* ---------- SECTION HEADERS ---------- */
+    .work-section,
+    .archive-section {
+        padding-top: 78px;
+        padding-bottom: 78px;
+    }
+
+    .about-section {
+        padding-top: 105px;
+        padding-bottom: 78px;
+    }
+
+    .contact-section {
+        padding-top: 78px;
+        padding-bottom: 78px;
+    }
 
     .section-header {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 8px;
+        margin-bottom: 38px;
     }
 
     .section-number {
         display: none;
     }
 
+    .section-header h2 {
+        font-size: clamp(2.25rem, 11vw, 3.5rem);
+        letter-spacing: -1.5px;
+    }
 
-    /* =====================================
-       CAROUSELS
-    ====================================== */
+    /* ABOUT */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 35px;
+    }
 
-    .carousel-images {
+    .about-intro {
+        font-size: clamp(1.55rem, 7vw, 2.2rem);
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    /* FEATURED VR PROJECT */
+    .project {
+        margin-bottom: 65px;
+    }
+
+    .project-video video {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .project-number {
+        margin-bottom: 2px;
+    }
+
+    .vr-detail-grid {
         grid-template-columns: 1fr;
         gap: 14px;
+        margin-top: 20px;
+    }
+
+    .vr-detail-image {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .vr-detail-image img {
+        min-height: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .vr-description-panel {
+        min-height: 0;
+        padding: 24px 20px;
+    }
+
+    .vr-description-panel h3 {
+        margin-bottom: 18px;
+        font-size: clamp(1.8rem, 9vw, 2.6rem);
+    }
+
+    .vr-description-panel p:not(.section-label) {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* MODEL CATEGORIES */
+    .model-category {
+        margin-bottom: 85px;
+    }
+
+    .model-category-header {
+        gap: 12px;
+        margin-bottom: 28px;
+        padding-bottom: 14px;
+    }
+
+    .model-category-header h3 {
+        font-size: clamp(1.8rem, 9vw, 2.7rem);
+    }
+
+    /* CAROUSELS */
+    .portfolio-carousel,
+    .carousel-stage,
+    .carousel-slide,
+    .carousel-images,
+    .carousel-description,
+    .carousel-description-text {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .carousel-images {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
     }
 
     .carousel-image {
@@ -1103,13 +1248,11 @@ footer a:hover {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        padding: 8px;
+        padding: 6px;
     }
 
-
-    /* ---------- MODEL CAROUSELS ---------- */
-
     #models .carousel-image {
+        width: 100%;
         height: auto;
         min-height: 0;
         aspect-ratio: 4 / 3;
@@ -1119,123 +1262,130 @@ footer a:hover {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        padding: 8px;
+        padding: 6px;
     }
-
-
-    /* ---------- DESCRIPTION ---------- */
-
-    #models .carousel-description,
-    #environments .carousel-description {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-
-        margin-top: 18px;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-    .carousel-description-text {
-        width: 100%;
-        max-width: none;
-    }
-
-    .carousel-description-text p {
-        width: 100%;
-        max-width: none;
-    }
-
-
-    /* ---------- TITLES ---------- */
-
-    .carousel-description h3 {
-        font-size: clamp(28px, 8vw, 40px);
-    }
-
-
-    /* ---------- CAROUSEL CONTROLS ---------- */
-
-    .carousel-controls {
-        margin-top: 22px;
-    }
-
-    .carousel-index {
-        gap: 7px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-
-        padding-bottom: 8px;
-
-        scrollbar-width: none;
-    }
-
-    .carousel-index::-webkit-scrollbar {
-        display: none;
-    }
-
-    .carousel-index button {
-        flex: 0 0 auto;
-        white-space: nowrap;
-    }
-
-
-    /* =====================================
-       ENVIRONMENTS
-    ====================================== */
 
     #environments .carousel-image {
+        width: 100%;
         height: auto;
         min-height: 0;
         aspect-ratio: 16 / 9;
     }
 
     #environments .carousel-image img {
-        padding: 0;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
+        padding: 0;
     }
 
-
-    /* =====================================
-       ASSETS - SINGLE IMAGE
-    ====================================== */
-
-    #models .asset-single-image {
-        grid-template-columns: 1fr;
+    #assets .asset-single-image {
+        grid-template-columns: minmax(0, 1fr);
     }
 
-
-    /* =====================================
-       VR PROJECT
-    ====================================== */
-
-    .vr-detail-grid {
-        grid-template-columns: 1fr;
+    /* Override desktop's 300px + 1fr description layout on phones. */
+    #models .carousel-description,
+    #environments .carousel-description,
+    .carousel-description {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        column-gap: 0;
+        row-gap: 10px;
+        margin-top: 16px;
+        margin-bottom: 0;
+        padding-bottom: 12px;
     }
 
-    .project-info {
-        grid-template-columns: 1fr;
+    .carousel-description > *,
+    .carousel-description-text,
+    .carousel-description-text > p {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
     }
 
-    .project-number {
-        margin-bottom: 10px;
+    .carousel-description h3 {
+        margin-top: 4px;
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
     }
 
-
-    /* =====================================
-       ABOUT
-    ====================================== */
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .carousel-description-text > p {
+        font-size: 14px;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
     }
 
-    .skills {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
+    .project-tools {
+        margin-top: 10px;
     }
 
+    /* CONTROLS */
+    .carousel-controls {
+        margin-top: 8px;
+        padding: 14px 0;
+    }
+
+    .carousel-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .carousel-counter {
+        font-size: 12px;
+    }
+
+    .carousel-index {
+        width: 100%;
+        max-width: 100%;
+        flex-wrap: nowrap;
+        gap: 7px;
+        margin-top: 12px;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .carousel-index-button,
+    .carousel-index button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .carousel-index-button {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+    /* CONTACT / FOOTER */
+    .contact-section {
+        min-height: auto;
+    }
+
+    .contact-section h2 {
+        font-size: clamp(2.7rem, 13vw, 4.5rem);
+        letter-spacing: -2px;
+    }
+
+    .contact-email {
+        max-width: 100%;
+        font-size: clamp(1.15rem, 6vw, 2rem);
+        overflow-wrap: anywhere;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 22px 18px;
+    }
 }
 
 
@@ -1243,25 +1393,33 @@ footer a:hover {
    SMALL PHONES
 ========================================= */
 
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
 
-    section {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .site-header {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .navigation {
+    .site-header,
+    .site-header.scrolled {
+        padding: 10px 14px;
         gap: 10px;
     }
 
+    .logo {
+        font-size: 19px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
     .navigation a {
-        font-size: 9px;
-        letter-spacing: 0.7px;
+        font-size: 8.5px;
+        letter-spacing: 0.55px;
+    }
+
+    .work-section,
+    .archive-section,
+    .about-section,
+    .contact-section {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     .carousel-images {
@@ -1272,77 +1430,16 @@ footer a:hover {
         aspect-ratio: 1 / 1;
     }
 
-    .skills {
-        grid-template-columns: 1fr;
+    .carousel-description {
+        row-gap: 8px;
     }
 
-}
-
-/* =========================================
-   MOBILE HEADER FIX
-========================================= */
-
-@media (max-width: 768px) {
-
-    .site-header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-
-        padding: 16px 20px;
-        height: auto;
+    .carousel-controls {
+        padding: 12px 0;
     }
 
-    .logo {
-        font-size: 24px;
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
     }
-
-    .navigation {
-        width: 100%;
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        gap: 18px;
-
-        overflow-x: auto;
-        white-space: nowrap;
-
-        padding-bottom: 4px;
-
-        scrollbar-width: none;
-    }
-
-    .navigation::-webkit-scrollbar {
-        display: none;
-    }
-
-    .navigation a {
-        flex: 0 0 auto;
-
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
-}
-
-
-/* EXTRA SMALL PHONES */
-
-@media (max-width: 520px) {
-
-    .site-header {
-        padding: 14px 16px;
-        gap: 12px;
-    }
-
-    .navigation {
-        gap: 16px;
-    }
-
-    .navigation a {
-        font-size: 9px;
-    }
-
 }
