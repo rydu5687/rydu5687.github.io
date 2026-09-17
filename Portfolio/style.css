@@ -440,12 +440,20 @@ section[id],
     border-radius: 5px;
 }
 
-.project-video video,
-.project-video iframe {
+.project-video video {
     display: block;
     width: 100%;
     height: 690px;
     object-fit: contain;
+    background: #000;
+    border: 0;
+}
+
+.project-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     background: #000;
     border: 0;
 }
@@ -1050,7 +1058,8 @@ footer a:hover {
     }
 
     img,
-    video {
+    video,
+    iframe {
         max-width: 100%;
     }
 
