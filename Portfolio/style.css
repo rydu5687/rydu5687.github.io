@@ -975,3 +975,36 @@ footer a:hover {
         gap: 10px;
     }
 }
+
+/* =========================================
+   ENVIRONMENT CAROUSEL SIZING
+========================================= */
+
+#environments .carousel-image {
+    height: 400px;
+    background: var(--bg-card);
+}
+
+#environments .carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+/* =========================================
+   ASSET CAROUSEL - SINGLE MODEL IMAGE
+========================================= */
+
+#assets .asset-single-image {
+    grid-template-columns: 1fr;
+}
+
+#assets .asset-single-image .carousel-image {
+    width: 100%;
+}
+
+#assets .asset-single-image .carousel-image img {
+    object-fit: contain;
+    padding: 10px;
+}
