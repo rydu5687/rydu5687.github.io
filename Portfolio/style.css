@@ -1031,3 +1031,249 @@ footer a:hover {
     grid-template-columns: 300px 1fr;
     column-gap: 40px;
 }
+
+/* =========================================
+   MOBILE LAYOUT
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GENERAL ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .site-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navigation {
+        gap: 16px;
+    }
+
+    .navigation a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+
+    /* ---------- SECTION HEADERS ---------- */
+
+    .section-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .section-number {
+        display: none;
+    }
+
+
+    /* =====================================
+       CAROUSELS
+    ====================================== */
+
+    .carousel-images {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .carousel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 8px;
+    }
+
+
+    /* ---------- MODEL CAROUSELS ---------- */
+
+    #models .carousel-image {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    #models .carousel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 8px;
+    }
+
+
+    /* ---------- DESCRIPTION ---------- */
+
+    #models .carousel-description,
+    #environments .carousel-description {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        margin-top: 18px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .carousel-description-text {
+        width: 100%;
+        max-width: none;
+    }
+
+    .carousel-description-text p {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* ---------- TITLES ---------- */
+
+    .carousel-description h3 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+
+    /* ---------- CAROUSEL CONTROLS ---------- */
+
+    .carousel-controls {
+        margin-top: 22px;
+    }
+
+    .carousel-index {
+        gap: 7px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+    }
+
+    .carousel-index::-webkit-scrollbar {
+        display: none;
+    }
+
+    .carousel-index button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+
+    /* =====================================
+       ENVIRONMENTS
+    ====================================== */
+
+    #environments .carousel-image {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+
+    #environments .carousel-image img {
+        padding: 0;
+        object-fit: contain;
+    }
+
+
+    /* =====================================
+       ASSETS - SINGLE IMAGE
+    ====================================== */
+
+    #models .asset-single-image {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================
+       VR PROJECT
+    ====================================== */
+
+    .vr-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+    }
+
+    .project-number {
+        margin-bottom: 10px;
+    }
+
+
+    /* =====================================
+       ABOUT
+    ====================================== */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 520px) {
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .site-header {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    .carousel-images {
+        gap: 10px;
+    }
+
+    #models .carousel-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+}
