@@ -1008,3 +1008,26 @@ footer a:hover {
     object-fit: contain;
     padding: 10px;
 }
+
+/* =========================================
+   ENVIRONMENT DESCRIPTION SPACING
+========================================= */
+
+#environments .carousel-description {
+    margin-top: 20px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+#environments .project-tools {
+    margin-top: 1px;
+}
+
+/* =========================================
+   MODEL DESCRIPTION POSITION
+========================================= */
+
+#models .carousel-description {
+    grid-template-columns: 300px 1fr;
+    column-gap: 40px;
+}
