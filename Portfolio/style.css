@@ -449,6 +449,16 @@ section[id],
     border: 0;
 }
 
+.project-video {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
 .project-video iframe {
     display: block;
     width: 100%;
